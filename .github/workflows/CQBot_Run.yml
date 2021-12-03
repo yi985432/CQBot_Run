@@ -1,5 +1,5 @@
 name: CQBot_Run
-on: push
+on: 
     schedule:
      - cron: '0 20 * * *'
 
