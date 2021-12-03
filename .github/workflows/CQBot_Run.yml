@@ -1,8 +1,12 @@
 name: CQBot_Run
-on: 
-    schedule:
-     - cron: '0 20 * * *'
-
+on:
+  push:
+   branches: [ main ]
+ # pull_request:
+  #  branches: [ main ]
+  schedule:
+    - cron: '0 23 * * *'
+ 
 jobs:
   Start1:
     runs-on: ubuntu-latest
