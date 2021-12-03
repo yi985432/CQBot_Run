@@ -1,5 +1,8 @@
 name: CQBot_Run
 on: push
+    schedule:
+     - cron: '0 20 * * *'
+
 jobs:
   Start1:
     runs-on: ubuntu-latest
@@ -10,3 +13,32 @@ jobs:
             cd CQBot
             sudo sh ./run.sh
 
+  Start2:
+    needs: Start1
+    runs-on: ubuntu-latest
+    steps:
+    - name: 运行
+      run: |
+            sudo git clone https://github.com/yi985432/CQBot
+            cd CQBot
+            sudo sh ./run.sh
+
+  Start3:
+    needs: Start2
+    runs-on: ubuntu-latest
+    steps:
+    - name: 运行
+      run: |
+            sudo git clone https://github.com/yi985432/CQBot
+            cd CQBot
+            sudo sh ./run.sh
+
+  Start4:
+    needs: Start3
+    runs-on: ubuntu-latest
+    steps:
+    - name: 运行
+      run: |
+            sudo git clone https://github.com/yi985432/CQBot
+            cd CQBot
+            sudo sh ./run.sh
